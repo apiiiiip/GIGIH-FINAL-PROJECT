@@ -29,7 +29,7 @@ function Dashboard() {
   });
 
   const handleAccessToken = () => {
-    window.location.href = `https://accounts.spotify.com/authorize?client_id=0351cc6087e444268ec2ff1e557de0c6&scope=playlist-modify-private&response_type=token&redirect_uri=${window.location.origin}`;
+    window.location.href = `https://accounts.spotify.com/authorize?client_id=dd3fd267aa72453abb37ce45115f0241&scope=playlist-modify-private&response_type=token&redirect_uri=${window.location.origin}`;
   };
 
   const handleUserProfile = async (token: string) => {
@@ -56,7 +56,6 @@ function Dashboard() {
         .replace("access_token=", "");
     if (token) {
       handleUserProfile(token);
-      // set_access_token(token);
       dispatch(setAccessToken(token));
     }
   }, []);
